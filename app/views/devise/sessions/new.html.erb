@@ -1,4 +1,5 @@
 <h2>Sign in</h2>
+<%= devise_error_messages! %>
 <%if flash[:error]%>
 <%=flash[:error]%>
 <%else%>
@@ -18,3 +19,4 @@
 
 <%= render "devise/shared/links"%>
 <%end%>
+<%=debug resource%>

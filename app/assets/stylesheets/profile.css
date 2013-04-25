@@ -1,0 +1,274 @@
+.centered {
+  margin: 0px auto;
+}
+@font-face {
+  font-family: 'Quicksand';
+  src: url('QUICKSAND_BOOK.OTF');
+  font-weight: normal;
+}
+@font-face {
+  font-family: 'Quicksand';
+  src: url('QUICKSAND_BOLD.OTF');
+  font-weight: bold;
+}
+@font-face {
+  font-family: 'Quicksand';
+  src: url('QUICKSAND_BOOK_OBLIQUE.OTF');
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Myriad Pro Cond';
+  src: url('MyriadPro-Cond.otf');
+  font-style: normal;
+}
+* {
+  font: normal 17px 'Quicksand', sans-serif;
+  margin: 0px;
+  padding: 0px;
+  border: none;
+}
+body {
+  color: #222222;
+}
+a {
+  text-decoration: none;
+}
+img {
+  display: block;
+}
+.clear {
+  clear: both;
+  height: 1px;
+}
+.button {
+  min-width: 150px;
+  padding: 7px 10px 10px 10px;
+  font-size: 20px;
+  font-weight: bold;
+  color: #ffffff;
+  text-align: center;
+  border: none;
+  border-top: solid 1px rgba(255, 255, 255, 0.25);
+  border-radius: 22px;
+  background: -webkit-gradient(linear, center bottom, center top, from(rgba(0, 0, 0, 0.1)), to(rgba(255, 255, 255, 0.1)));
+  cursor: pointer;
+}
+.textbox {
+  min-width: 300px;
+  padding: 8px 10px;
+  color: #222222;
+  border: solid thin gray;
+  border-radius: 5px;
+  -webkit-box-shadow: inset 0px 1px 5px rgba(0, 0, 0, 0.15);
+  box-shadow: inset 0px 1px 5px rgba(0, 0, 0, 0.15);
+}
+.cbox {
+  min-width: 300px;
+  padding: 8px 10px;
+  color: #222222;
+  border: solid thin gray;
+  border-radius: 5px;
+  -webkit-box-shadow: inset 0px 1px 5px rgba(0, 0, 0, 0.15);
+  box-shadow: inset 0px 1px 5px rgba(0, 0, 0, 0.15);
+}
+#wrapper {
+  min-width: 320px;
+}
+#result-positions {
+  cursor: pointer;
+}
+#header {
+  height: 60px;
+  padding: 0px 20px;
+  background-color: #222222;
+}
+#header #logo {
+  float: left;
+  width: 60px;
+  height: 60px;
+  background-image: url('siteicon.png');
+  background-position: -101px 0px;
+  background-repeat: no-repeat;
+}
+#header #menu {
+  float: right;
+  color: #ffffff;
+}
+#header ul {
+  list-style: none;
+  margin: 0px;
+  padding: 0px;
+}
+#header ul #sign_out {
+  cursor: pointer;
+}
+#header ul li {
+  font-size: 15px;
+  height: 60px;
+  line-height: 60px;
+  float: left;
+  padding: 0px 15px;
+}
+#header ul li img {
+  display: inline-block !important;
+  vertical-align: middle;
+}
+@media screen and (max-width: 980px) {
+  #header {
+    height: auto;
+  }
+  #header #menu {
+    float: none;
+    display: table;
+    margin: 0px auto;
+  }
+  #header #logo {
+    float: none;
+    margin: 0px auto;
+  }
+  #header li {
+    padding: 0px 5px !important;
+  }
+}
+#main {
+  width: 100%;
+  min-height: 100%;
+}
+.heading {
+  font: normal 30px 'Myriad Pro Cond', sans-serif;
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 30px 10px;
+  text-align: center;
+  border-bottom: dashed thin #cccccc;
+  color: #f84f00;
+}
+.content {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 30px 10px;
+  text-align: center;
+}
+#footer {
+  width: 100%;
+  background-color: #222222;
+  padding: 20px 0px;
+}
+#footer #footer-logo-wrapper {
+  display: inline-block;
+  vertical-align: middle;
+  padding: 20px;
+}
+#footer #footer-logo-wrapper #footer-logo {
+  width: 101px;
+  height: 101px;
+  background-image: url('siteicon.png');
+  background-position: 0px 0px;
+  background-repeat: no-repeat;
+}
+#footer #contact {
+  display: inline-block;
+  vertical-align: middle;
+  padding: 0px 20px;
+  color: gray;
+  font-size: 15px;
+}
+#footer #contact p {
+  margin: 20px 0px;
+}
+#profile-wrapper {
+  max-width: 980px;
+  padding: 40px 10px;
+  display: table;
+  margin: 0px auto;
+}
+#profile-wrapper p {
+  margin: 10px 0px;
+}
+#profile-info {
+  display: table-cell;
+  vertical-align: top;
+}
+#profile-info #profile-logo img {
+  width: 300px;
+  margin: 0px auto;
+}
+#profile-info #profile-contact {
+  padding-top: 20px;
+  text-align: right;
+}
+#profile-info #profile-contact #profile-name {
+  font: normal 40px 'Myriad Pro Cond', sans-serif;
+  text-transform: uppercase;
+  color: #f84f00;
+}
+#profile-content {
+  display: table-cell;
+  vertical-align: top;
+  padding: 0px 0px 0px 40px;
+}
+#profile-content .profile-heading {
+  font: normal 25px 'Myriad Pro Cond', sans-serif;
+  text-transform: uppercase;
+  color: gray;
+  padding-bottom: 20px;
+  border-bottom: dashed thin #cccccc;
+}
+#profile-content #profile-intro {
+  padding: 10px 0px;
+}
+#profile-content #list-job {
+  padding-top: 10px;
+}
+#profile-content #list-job .job {
+  position: relative;
+  padding: 10px 0px;
+}
+#profile-content #list-job .job .job-name {
+  font-weight: bold;
+}
+#profile-content #list-job .job .job-info {
+  font-size: 15px;
+  color: gray;
+  padding-bottom: 10px;
+}
+#profile-content #list-job .job .job-apply {
+  position: absolute;
+  top: 10px;
+  right: 0px;
+  min-width: 150px;
+  padding: 7px 10px 10px 10px;
+  font-size: 20px;
+  font-weight: bold;
+  color: #ffffff;
+  text-align: center;
+  border: none;
+  border-top: solid 1px rgba(255, 255, 255, 0.25);
+  border-radius: 22px;
+  background: -webkit-gradient(linear, center bottom, center top, from(rgba(0, 0, 0, 0.1)), to(rgba(255, 255, 255, 0.1)));
+  cursor: pointer;
+  min-width: 100px;
+  width: 100px;
+  padding: 5px 8px 8px 8px;
+  background-color: #2a9400;
+}
+#profile-content #list-job .job .job-apply a {
+  font-size: 17px;
+  font-weight: bold;
+}
+@media screen and (max-width: 980px) {
+  #profile-info {
+    display: table-row;
+  }
+  #profile-info #profile-contact {
+    text-align: center;
+  }
+  #profile-content {
+    display: table-row;
+  }
+  .job-apply {
+    position: static !important;
+    margin: 0px auto;
+    margin-top: 10px;
+  }
+}

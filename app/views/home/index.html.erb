@@ -1,0 +1,63 @@
+<%provide(:page_title, "Home")%>
+<%content_for :head do%>
+<%= stylesheet_link_tag "welcome" %>
+<%end%>
+<body>
+  <div class="error">
+    <%=flash[:error]%>
+  </div>
+	<div id="wrapper">
+		<div id="header">
+			<div id="logo"></div>
+
+			<div id="overview">
+				<h1>Welcome to HasFriend</h1>
+				<h2>You and your friends get good jobs <br>
+				Companies get strong candidates</h2>
+			</div>
+
+			<div class="button" id="sign_in">Login with Facebook</div>
+
+			<div class="clear"></div>
+		</div>
+
+		<div id="main">
+			<div class="content-bg1">
+				<div class="heading">Hmm? What is HasFriend?</div>
+
+				<div class="content">
+					<p>HasFriend is the place where you can help your friends to find suitable jobs, as well as introduce the best candidates for the companies to earn money. How can it be? Read the section below</p>
+					<p>If you are a company that want to recruit new employees, sign up now!</p>
+				</div>
+        <%=link_to "Sign up", new_company_registration_path,:id => "button-signup", :class => "button" %>
+        <%=link_to "Sign in as company", new_company_session_path,:id => "button-signup", :class => "button" %>
+			</div>
+
+
+			<div class="content-bg2">
+				<div class="heading">How does HasFriend work?</div>
+
+				<div class="user-type">
+					<div id="icon-fbuser"></div>
+					<b class="fbuser">If you are a facebook user</b>
+				</div>
+
+				<div class="content">
+					<p>The first time you sign in our system with your facebook account, you will be given 500 coins for bet. If you refer one of your friend to a company, and he/she is accepted, you will receive the money equivalent to number of coins that you bet on him/her. Then, you can withdraw your money, or use it to buy more coins. If your friend fail, you will lose your coins. BE CAREFUL!</p>
+				</div>
+
+				<div class="user-type">
+					<div id="icon-company"></div>
+					<b class="company">If you are a company</b>
+				</div>
+
+				<div class="content">
+					<p>You are looking for some good employees? You can post the recruitment information here</p>
+				</div>
+
+				<%=render 'shared/form', :company => Company.new%>
+		</div>
+		<%=render 'shared/footer'%>
+	</div>
+</body>
+</html>

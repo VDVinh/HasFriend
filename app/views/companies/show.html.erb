@@ -1,0 +1,65 @@
+<%provide(:page_title, "Profile")%>
+<%= stylesheet_link_tag "profile" %>
+
+
+</head>
+<body>
+	<div id="wrapper">
+
+		<%=render 'shared/header'%>
+
+
+		<div id="main">
+			<div id="profile-wrapper">
+
+
+				<div id="profile-info">
+					<div id="profile-logo">
+						<%=image_tag "logo/2359.png"%>
+					</div>
+					<div id="profile-contact">
+						<div id="profile-name">2359 Media</div>
+						<p>Adress: 99 Tanjong Pagar Road, Singapore, 088520</p>
+						<p>Tel: <%=@company.phone%></p>
+					</div>
+				</div>
+
+
+				<div id="profile-content">
+					<div class="profile-heading">OVERVIEW</div>
+
+					<div id="profile-intro">
+						<%=@company.description.html_safe%>
+					</div>
+
+					<div class="profile-heading">CAREER</div>
+
+					<div id="list-job">
+            <%jobs = @company.jobs.where("jobs.status = 'available'")%>
+            <%jobs.each do |job|%>
+						<div class="job">
+							<div class="job-name"><%=job.position%></div>
+							<div class="job-desc">
+								<%=job.description.html_safe%>
+							</div>
+							<div class="job-apply">
+                <%=link_to "Apply now", "#"%>
+              </div>
+
+						</div>
+            <%end%>
+
+
+					</div>
+				</div>
+
+
+			</div>
+		</div>
+
+
+		<%=render 'shared/footer'%>
+
+	</div>
+</body>
+</html>

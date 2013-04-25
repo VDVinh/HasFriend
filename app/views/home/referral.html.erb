@@ -1,0 +1,218 @@
+<% provide(:page_title, "Referral")%>
+<% content_for :head do%>
+<%= stylesheet_link_tag "referral" %>
+<%end%>
+
+<script>
+	$(document).ready(function() {
+		$(".slider").slider({ animate: true }, { max: 10 }, { min: 0 });
+
+		$(".s1").bind( "slidechange", function(event, ui) {
+			var value = $(".s1").slider( "option", "value" );
+			$(".p1").html(value);
+
+		});
+		$(".s2").bind( "slidechange", function(event, ui) {
+			var value = $(".s2").slider( "option", "value" );
+			$(".p2").html(value);
+		});
+		$(".s3").bind( "slidechange", function(event, ui) {
+			var value = $(".s3").slider( "option", "value" );
+			$(".p3").html(value);
+		});
+		$(".s4").bind( "slidechange", function(event, ui) {
+			var value = $(".s4").slider( "option", "value" );
+			$(".p4").html(value);
+		});
+
+		$('#search-position').keyup(function(){
+		    $('.one-position').each(function(){
+				var re = new RegExp($('#search-position').val(), 'i')
+
+		    	if($(this).children('.pos-name')[0].innerHTML.match(re) || $(this).children('.pos-com')[0].innerHTML.match(re)){
+		    		$(this).show();
+		    	}else{
+		    		$(this).hide();
+		    	};
+		    });
+		});
+
+	});
+</script>
+
+</head>
+<body>
+<div id="wrapper">
+		<%=render 'shared/header'%>
+
+		<div id="main">
+			<div class="form">
+				<form action="">
+
+
+					<div class="heading">Step 1 - Pick a company</div>
+					<div class="content">Choose the best company for your friend</div>
+
+
+					<div class="divtable">
+						<div class="divrow">
+							<div class="divcell left">
+								<span class="fieldname">Industry</span>
+								<span class="fielddesc">Select an industry</span>
+							</div>
+							<div class="divcell right">
+								<select id="list-industry" class="cbox">
+									<option value="">Choose one...</option>
+								</select>
+							</div>
+						</div>
+						<div class="divrow">
+							<div class="divcell left">
+								<span class="fieldname">Position</span>
+								<span class="fielddesc">Select a position</span>
+							</div>
+							<div class="divcell right">
+								<input id="search-position" type="text" class="textbox">
+								<div id="result-positions">
+
+									<div class="one-position">
+										<div class="pos-name">HTML/CSS designer</div>
+										<div class="pos-com">2359 Media</div>
+									</div>
+
+									<div class="one-position">
+										<div class="pos-name">iOS developer</div>
+										<div class="pos-com">2359 Media</div>
+									</div>
+
+									<div class="one-position">
+										<div class="pos-name">Android developer</div>
+										<div class="pos-com">2359 Media</div>
+									</div>
+
+									<div class="one-position">
+										<div class="pos-name">Senior GUI designer</div>
+										<div class="pos-com">KMS Tech</div>
+									</div>
+
+									<div class="one-position">
+										<div class="pos-name">iOS senior</div>
+										<div class="pos-com">KMS Tech</div>
+									</div>
+
+									<div class="one-position">
+										<div class="pos-name">PHP developer</div>
+										<div class="pos-com">KMS Tech</div>
+									</div>
+
+									<div class="one-position">
+										<div class="pos-name">Ruby on Rails fresher</div>
+										<div class="pos-com">2359 Media</div>
+									</div>
+
+									<div class="one-position">
+										<div class="pos-name">Ruby on Rails senior</div>
+										<div class="pos-com">2359 Media</div>
+									</div>
+
+									<div class="one-position">
+										<div class="pos-name">Java fresher</div>
+										<div class="pos-com">CSC</div>
+									</div>
+
+									<div class="one-position">
+										<div class="pos-name">QA fresher</div>
+										<div class="pos-com">KMS Tech</div>
+									</div>
+
+								</div>
+							</div>
+						</div>
+					</div>
+
+
+					<div class="heading">Step 2 - Pick your friend</div>
+					<div class="content">Choose a friend that is appropriate with the above position</div>
+
+
+					<div class="divtable">
+						<div class="divrow">
+							<div class="divcell left">
+								<span class="fieldname">Friend's name</span>
+								<span class="fielddesc">Select one of your friend</span>
+							</div>
+							<div class="divcell right">
+								<input type="text" class="textbox">
+								<div id="list-fbfriends">
+
+								</div>
+							</div>
+						</div>
+						<div class="divrow">
+							<div class="divcell left">
+								<span class="fieldname">Reason</span>
+								<span class="fielddesc">Why your friend should join the company</span>
+							</div>
+							<div class="divcell right">
+								<textarea rows="10" cols="" class="textbox"></textarea>
+							</div>
+						</div>
+					</div>
+
+
+					<div class="heading">Step 3 - Rate your friend</div>
+					<div class="content">Evaluate your friend's abilities. Make sure that you know him well.</div>
+
+
+					<div class="divtable">
+						<div class="divrow">
+							<div class="divcell left">
+								<span class="fieldname">Smart</span>
+							</div>
+							<div class="divcell right">
+								<div class="slider s1"></div><div class="p1">0</div>
+							</div>
+						</div>
+						<div class="divrow">
+							<div class="divcell left">
+								<span class="fieldname">Experiment</span>
+							</div>
+							<div class="divcell right">
+								<div class="slider s2"></div><div class="p2">0</div>
+							</div>
+						</div>
+						<div class="divrow">
+							<div class="divcell left">
+								<span class="fieldname">Hardwork</span>
+							</div>
+							<div class="divcell right">
+								<div class="slider s3"></div><div class="p3">0</div>
+							</div>
+						</div>
+						<div class="divrow">
+							<div class="divcell left">
+								<span class="fieldname">Teamwork</span>
+							</div>
+							<div class="divcell right">
+								<div class="slider s4"></div><div class="p4">0</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="heading">Step 4 - Submit your referral</div>
+					<div class="content">Press Submit button to give notices to your friend and the company. Good luck!</div>
+
+					<div style="text-align: center;">
+						<input type="submit" class="button" value="Submit">
+					</div>
+
+				</form>
+			</div>
+		</div>
+
+
+		<%=render 'shared/footer'%>
+
+	</div>
+</body>
+</html>

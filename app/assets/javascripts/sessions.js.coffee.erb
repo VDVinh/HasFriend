@@ -1,0 +1,37 @@
+jQuery ->
+  '<%industries = Industry.all%>'
+  '<%industries.each do |industry|%>'
+  $('#list-industry').append('<option value=<%=industry.id%>><%=industry.name %></option>')
+  '<%end%>'
+  $('#result-positions').empty()
+  $('#result-positions').children().remove()
+  '<%jobs = Job.select("jobs.position, jobs.id, companies.name").joins(:company).limit(10)%>'
+  '<%jobs.each do |job|%>'
+  $("#result-positions").append("<div class='one-position' alt='<%=job.id%>'> <div class='pos-name' ><%=job.position%></div><div class='pos-com'><%=job.name%> </div></div>")
+  '<%end%>'
+
+  $('#result-positions').on('click','div.one-position',() ->
+    job_id = $(this).attr("alt")
+    $("#hidden-pos").remove()
+    $("form").append("<input id='hidden-pos' name='invitation[job_id]' type='hidden' value='"+job_id+"' />")
+    $(".one-position").css({"background-color" : "transparent"})
+    $(this).css({"background-color" : "#2a9400"}))
+
+
+  $('#list-industry').change ->
+    selectedIndustry = $('#list-industry :selected').val()
+
+    $.ajax '/home/job_request',
+      type: 'POST'
+      dataType: 'json'
+      url: '/home/job_request'
+      data: {industry_id: selectedIndustry}
+      success: (data) ->
+        $('#result-positions').empty()
+        $('#result-positions').children().remove()
+        for key , value of data
+          $("#result-positions").append("<div class='one-position' alt='"+value.id+"'> <div class='pos-name' >"+value.position+"</div> <div class='pos-com'>" +value.name + "</div></div>")
+
+
+
+

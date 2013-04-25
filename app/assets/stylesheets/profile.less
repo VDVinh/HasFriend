@@ -1,0 +1,127 @@
+
+@import "site.less";
+
+#profile-wrapper {
+	max-width: 980px;
+	padding: 40px 10px;
+	display: table;
+	.centered;
+	
+	p {
+		margin: 10px 0px;
+	}
+}
+
+//==============================
+//    INFORMATION OF COMPANY
+//==============================
+
+#profile-info {
+	display: table-cell;
+	vertical-align: top;
+
+	#profile-logo {
+
+		img { 
+			width: 300px;
+			.centered;
+		}
+	}
+
+	#profile-contact {
+		padding-top: 20px;
+		text-align: right;
+		
+		#profile-name {
+			font: normal 40px 'Myriad Pro Cond', sans-serif;
+			text-transform: uppercase;
+			color: @orange;
+		}
+	}
+}
+
+//==============================
+//    DESCRIPTION AND CAREER
+//==============================
+
+#profile-content {
+	display: table-cell;
+	vertical-align: top;
+	padding: 0px 0px 0px 40px;
+	
+
+	.profile-heading {
+		font: normal 25px 'Myriad Pro Cond', sans-serif;
+		text-transform: uppercase;
+		color: gray;
+		padding-bottom: 20px;
+		border-bottom: dashed thin #cccccc;
+	}
+	
+	#profile-intro {
+		padding: 10px 0px;
+	}
+
+	#list-job {
+		padding-top: 10px;
+
+		.job {
+			position: relative;
+			padding: 10px 0px;
+
+			.job-name {
+				font-weight: bold;
+			}
+
+			.job-info {
+				font-size: 15px;
+				color: gray;
+				padding-bottom: 10px;
+			}
+
+			.job-desc {
+
+			}
+
+			.job-apply {
+				position: absolute;
+				top: 10px;
+				right: 0px;
+				.button;
+				min-width: 100px;
+				width: 100px;
+				padding: 5px 8px 8px 8px;
+				background-color: @green;
+
+				a {
+					font-size: 17px;
+					font-weight: bold;
+				}
+			}
+		}
+	}
+}
+
+//======================
+//    MOBILE VERSION
+//======================
+
+@media screen and (max-width: 980px) {
+	#profile-info {
+		display: table-row;
+
+		#profile-contact {
+			text-align: center;
+		}
+	}
+
+	#profile-content {
+		display: table-row;
+	}
+
+	.job-apply {
+		position: static !important;
+		.centered;
+		margin-top: 10px;
+	}
+}

@@ -2,7 +2,16 @@
       <a href="welcome.html"><div id="logo"></div></a>
       <ul id="menu">
         <li><%=link_to "company sign out", destroy_company_session_path, :method => :delete if current_company%></li>
-        <li><%=image_tag "icon/user.png"%> &nbsp; <%= current_user ? current_user.name : current_company.name%> </li>
+        <li><%=image_tag "icon/user.png"%> &nbsp;
+          <% if current_user%>
+          <%= current_user.name%>
+          <%else if current_company%>
+          <%=current_company.name%>
+          <%else%>
+          <%=current_admin_user.email%>
+          <%end%>
+          <%end%>
+        </li>
         <li><%=image_tag "icon/coin.png"%> &nbsp; <%= current_user ? current_user.coins : ""%></li>
         <li><%=image_tag "icon/home.png"%></li>
         <li><%=image_tag "icon/signout.png", :id => "sign_out"%></li>

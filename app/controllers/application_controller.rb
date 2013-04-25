@@ -7,7 +7,7 @@ class ApplicationController < ActionController::Base
   helper_method :current_user
 
   def after_sign_in_path_for(resource)
-    referral_path
+    admin_companies_path
   end
 
   def check_user_access

@@ -29,9 +29,9 @@
 					<p>HasFriend is the place where you can help your friends to find suitable jobs, as well as introduce the best candidates for the companies to earn money. How can it be? Read the section below</p>
 					<p>If you are a company that want to recruit new employees, sign up now!</p>
 				</div>
-        <%=link_to "Sign up", new_company_registration_path,:id => "button-signup", :class => "button" %>
+				<div id="button-signup" class="button">Sign up</div>
 
-        <%=render 'shared/sign_in_form'%>
+        		
 			</div>
 
 
@@ -55,7 +55,7 @@
 				<div class="content">
 					<p>You are looking for some good employees? You can post the recruitment information here</p>
 				</div>
-
+				<%=render 'shared/sign_in_form'%>
 				<%=render 'shared/form', :company => Company.new%>
 		</div>
 		<%=render 'shared/footer'%>

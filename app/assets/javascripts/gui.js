@@ -11,14 +11,14 @@ $(function() {
 
 	/*****PARALLAX EFFECT*****/
 
-	$(window).bind('scroll',function(e){
-	    parallaxScroll();
-	});
+	// $(window).bind('scroll',function(e){
+	//     parallaxScroll();
+	// });
 
-	function parallaxScroll(){
-	    var scrolled = $(window).scrollTop();
-	    $('#header').css('background-position','center'+' '+(-200-(scrolled*.5))+'px');
-	}
+	// function parallaxScroll(){
+	//     var scrolled = $(window).scrollTop();
+	//     $('#header').css('background-position','center'+' '+(-200-(scrolled*.5))+'px');
+	// }
 
 
 });

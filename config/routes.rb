@@ -5,8 +5,11 @@ HasFriend::Application.routes.draw do
 
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
-  match 'companies/:id' => 'companies#show'
+
   match 'company_sign_up' => 'companies/registrations#create'
+  resources :companies
+  get 'jobs/index/:company' => 'jobs#index', :as => 'jobs_by_company'
+  resources :jobs
   match '/referral' => 'home#referral', as: 'referral'
   match '/profile' => 'home#profile'
   match '/home/job_request' => 'home#job_request'

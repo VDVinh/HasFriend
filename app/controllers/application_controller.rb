@@ -7,14 +7,14 @@ class ApplicationController < ActionController::Base
   helper_method :current_user
 
   def after_sign_in_path_for(resource)
-    root_path
+    jobs_by_company_path(resource)
   end
 
   def after_failed_sign_up_path_for(resource)
     root_path
   end
   def after_sign_up_path_for(resource)
-    root_path
+    jobs_path_by_company(resource)
   end
 
   def check_user_access

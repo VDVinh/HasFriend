@@ -1,0 +1,9 @@
+<h2> LIST JOBS</h2>
+<%if @jobs.nil?%>
+<%="THERE IS NO JOB" %>
+<%else%>
+<%@jobs.each do |job|%>
+<%=link_to job.position, job_path(job)%>
+<%=job.company.name%>
+<%end%>
+<%end%>

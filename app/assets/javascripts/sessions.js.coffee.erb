@@ -29,9 +29,8 @@ jQuery ->
       success: (data) ->
         $('#result-positions').empty()
         $('#result-positions').children().remove()
-        for key , value of data.companies
-          $("#result-positions").append("<div class='one-position' alt='"+value.id+"'> <div class='pos-name' >"+value.position+"</div> <div class='pos-com'>" +value.name + "</div></div>")
-
-
-
+        source   = $("#some-template").html()
+        template = Handlebars.compile(source)
+        $("#result-positions").html(template(data))
+   
 

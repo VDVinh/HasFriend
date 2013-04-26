@@ -13,9 +13,6 @@ class ApplicationController < ActionController::Base
   def after_failed_sign_up_path_for(resource)
     root_path
   end
-  def after_sign_up_path_for(resource)
-    jobs_path_by_company(resource)
-  end
 
   def check_user_access
       if session[:user_id]

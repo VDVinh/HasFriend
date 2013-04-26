@@ -20,5 +20,4 @@ $(function() {
       $('#header').css('background-position','center'+' '+(-200-(scrolled*.5))+'px');
   }
 
-
 });

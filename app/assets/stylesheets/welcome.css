@@ -284,12 +284,12 @@ img {
 .user-type .company {
   color: #a966ff;
 }
-.form .textbox {
+.content-bg2 .form .textbox {
   color: #ffffff;
   background-color: #222222;
   border-color: #111111;
 }
-.form .button {
+.content-bg2 .form .button {
   background-color: #2a9400;
 }
 #footer {
@@ -319,3 +319,20 @@ img {
   font-size: 15px !important;
   margin: 20px 0px;
 }
+
+#error_explanation {
+  text-align: center;
+  color: red;
+  list-style: none;
+}
+#error_explanation ul {
+  margin: 0px auto;
+  max-width: 980px;
+  display: table;
+}
+#error_explanation ul li{
+  margin: 0px auto;
+  max-width: 980px;
+}
+
+

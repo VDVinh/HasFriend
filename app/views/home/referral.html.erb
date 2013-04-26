@@ -40,6 +40,15 @@
 	});
 </script>
 
+<script id="some-template" type="text/x-handlebars-template">
+	{{#companies}}
+	<div class='one-position' alt='{{id}}"'>
+		<div class='pos-name' >{{position}}</div>
+		<div class='pos-com'>{{name}}</div>
+	</div>
+	{{/companies}}
+</script>
+
 </head>
 <body>
 <div id="wrapper">

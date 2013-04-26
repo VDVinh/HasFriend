@@ -1,0 +1,74 @@
+<div class="form">
+<%= form_for(resource, :as => :company, :url => registration_path(:company)) do |f| %>
+  <%= devise_error_messages! %>
+  <%if flash[:error]%>
+  <%= flash[:error]%>
+  <%else%>
+        <div class="divtable">
+              <div class="divrow">
+                <div class="divcell left">
+                  <span class="fieldname">Company name</span>
+                  <span class="fielddesc">Add your company name</span>
+                </div>
+                <div class="divcell right">
+                  <%=f.text_field :name, :class => "textbox"%>
+                </div>
+              </div>
+
+              <div class="divrow">
+                <div class="divcell left">
+                  <span class="fieldname">Your Email</span>
+                  <span class="fielddesc">Enter valid email</span>
+                </div>
+                <div class="divcell right">
+                  <%=f.text_field :email, :class => "textbox"%>
+                </div>
+              </div>
+
+              <div class="divrow">
+                <div class="divcell left">
+                  <span class="fieldname">Password</span>
+                  <span class="fielddesc">Enter your password</span>
+                </div>
+                <div class="divcell right">
+                  <%=f.password_field :password, :class => "textbox"%>
+                </div>
+              </div>
+
+              <div class="divrow">
+                <div class="divcell left">
+                  <span class="fieldname">Confirm password</span>
+                  <span class="fielddesc">Check your password again</span>
+                </div>
+                <div class="divcell right">
+                  <%=f.password_field :password_confirmation, :class => "textbox"%>
+                </div>
+              </div>
+
+              <div class="divrow">
+                <div class="divcell left">
+                  <span class="fieldname">Description</span>
+                  <span class="fielddesc">Introduce your company</span>
+                </div>
+                <div class="divcell right">
+                  <%=f.text_area :description, :rows => "10", :class => "textbox"%>
+                </div>
+              </div>
+
+              <div class="divrow">
+                <div class="divcell left">
+                  <span class="fieldname">Phone</span>
+                  <span class="fielddesc">Phone number of your company</span>
+                </div>
+                <div class="divcell right">
+                  <%=f.text_field :phone ,:class => "textbox"%>
+                </div>
+              </div>
+            </div>
+
+            <div style="text-align: center; padding: 10px 0px 0px;">
+              <%=f.submit "Sign up", :class =>"button"%>
+            </div>
+      <% end %>
+    <%end%>
+</div class="form">

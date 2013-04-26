@@ -30,7 +30,8 @@
 					<p>If you are a company that want to recruit new employees, sign up now!</p>
 				</div>
         <%=link_to "Sign up", new_company_registration_path,:id => "button-signup", :class => "button" %>
-        <%=link_to "Sign in as company", new_company_session_path,:id => "button-signup", :class => "button" %>
+
+        <%=render 'shared/sign_in_form'%>
 			</div>
 
 
